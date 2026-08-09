@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Toko Sembako Ibu Aries</title>
+    <title><%= title %> | Toko Sembako Ibu Aries</title>
 
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -14,14 +15,157 @@
     <%- include("partials/navbar") %>
 
     <main>
-        <section>
-            <h1>Selamat Datang di Toko Sembako Ibu Aries</h1>
-            <p>Website toko sembako Ibu Aries.</p>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+
+                    <div class="hero-text">
+                        <span class="hero-badge">
+                            Toko Sembako Ibu Aries
+                        </span>
+
+                        <h1>
+                            Kebutuhan Sembako
+                            untuk Keluarga Anda
+                        </h1>
+
+                        <p>
+                            Temukan berbagai kebutuhan sembako
+                            dengan mudah dan praktis.
+                        </p>
+
+                        <a href="/produk" class="btn">
+                            Lihat Produk
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </section>
+
+
+        <!-- Tentang Toko -->
+        <section class="about">
+            <div class="container">
+
+                <header class="section-header">
+                    <span class="section-label">
+                        Tentang Kami
+                    </span>
+
+                    <h2>
+                        Belanja Kebutuhan Harian Lebih Mudah
+                    </h2>
+
+                    <p>
+                        Toko Sembako Ibu Aries menyediakan
+                        berbagai kebutuhan pokok untuk
+                        memenuhi kebutuhan sehari-hari.
+                    </p>
+                </header>
+
+            </div>
+        </section>
+
+
+        <!-- Preview Produk -->
+        <section class="product-preview">
+            <div class="container">
+
+                <header class="section-header">
+                    <span class="section-label">
+                        Produk
+                    </span>
+
+                    <h2>
+                        Produk Pilihan
+                    </h2>
+
+                    <p>
+                        Lihat beberapa produk yang tersedia
+                        di toko kami.
+                    </p>
+                </header>
+
+                <div class="product-grid">
+
+                    <article class="product-card">
+                        <h3>Beras</h3>
+
+                        <p>
+                            Beras berkualitas untuk kebutuhan
+                            sehari-hari.
+                        </p>
+
+                        <a href="/produk">
+                            Lihat Produk
+                        </a>
+                    </article>
+
+
+                    <article class="product-card">
+                        <h3>Minyak Goreng</h3>
+
+                        <p>
+                            Minyak goreng untuk kebutuhan
+                            memasak keluarga.
+                        </p>
+
+                        <a href="/produk">
+                            Lihat Produk
+                        </a>
+                    </article>
+
+
+                    <article class="product-card">
+                        <h3>Gula</h3>
+
+                        <p>
+                            Gula pasir untuk berbagai
+                            kebutuhan rumah tangga.
+                        </p>
+
+                        <a href="/produk">
+                            Lihat Produk
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Call To Action -->
+        <section class="cta">
+            <div class="container">
+
+                <header class="section-header">
+                    <h2>
+                        Punya pertanyaan tentang produk?
+                    </h2>
+
+                    <p>
+                        Tanyakan kebutuhan sembako Anda
+                        melalui fitur Tanya AI.
+                    </p>
+
+                    <a href="/tanya-ai" class="btn">
+                        Tanya AI
+                    </a>
+                </header>
+
+            </div>
+        </section>
+
     </main>
 
     <%- include("partials/footer") %>
 
     <script src="/js/main.js"></script>
+
 </body>
+
 </html>
