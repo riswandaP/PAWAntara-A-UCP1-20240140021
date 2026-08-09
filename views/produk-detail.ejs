@@ -1,77 +1,40 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title><%= title %> | Toko Sembako Ibu Aries</title>
-
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-
 <body>
+  <%- include('partials/navbar') %>
 
-    <%- include("partials/navbar") %>
+  <main>
+    <section class="product-detail">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="/">Beranda</a> / <a href="/produk">Produk</a> / <span><%= product.name %></span>
+      </nav>
 
-    <main>
+      <article class="product-detail__card">
+        <h1><%= product.name %></h1>
+        <dl class="product-detail__info">
+          <dt>Kategori</dt>
+          <dd><%= product.category %></dd>
 
-        <section class="product-detail">
-            <div class="container">
+          <dt>Harga</dt>
+          <dd>Rp <%= product.price.toLocaleString('id-ID') %></dd>
 
-                <article class="product-detail-card">
+          <dt>Stok</dt>
+          <dd><%= product.stock %> unit</dd>
+        </dl>
 
-                    <header>
-                        <span class="section-label">
-                            Detail Produk
-                        </span>
+        <a href="/produk" class="btn btn--secondary">Kembali ke Daftar Produk</a>
+      </article>
+    </section>
+  </main>
 
-                        <h1>
-                            <%= product.name %>
-                        </h1>
-                    </header>
+  <%- include('partials/footer') %>
 
-                    <div class="product-info">
-
-                        <p>
-                            <strong>ID Produk:</strong>
-                            <%= product.id %>
-                        </p>
-
-                        <p>
-                            <strong>Kategori:</strong>
-                            <%= product.category %>
-                        </p>
-
-                        <p>
-                            <strong>Harga:</strong>
-                            Rp <%= product.price.toLocaleString("id-ID") %>
-                        </p>
-
-                        <p>
-                            <strong>Stok:</strong>
-                            <%= product.stock %>
-                        </p>
-
-                    </div>
-
-                    <footer>
-                        <a href="/produk" class="btn">
-                            Kembali ke Produk
-                        </a>
-                    </footer>
-
-                </article>
-
-            </div>
-        </section>
-
-    </main>
-
-    <%- include("partials/footer") %>
-
-    <script src="/js/main.js"></script>
-
+  <script src="/js/main.js"></script>
 </body>
-
 </html>

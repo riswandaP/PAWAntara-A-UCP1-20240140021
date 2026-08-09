@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
+// public/js/main.js
+// Toggle menu navbar di mode mobile (hamburger).
+// Menggunakan addEventListener + toggle class, bukan hanya CSS.
 
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("main-menu");
+document.addEventListener("DOMContentLoaded", function () {
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
 
-    if (!hamburger || !navMenu) {
-        return;
-    }
+  if (!navToggle || !navMenu) return;
 
-    hamburger.addEventListener("click", () => {
+  navToggle.addEventListener("click", function () {
+    const isOpen = navMenu.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 
-        navMenu.classList.toggle("active");
-
-        const isOpen = navMenu.classList.contains("active");
-
-        hamburger.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
-
+  // Tutup menu otomatis kalau salah satu link menu diklik (UX mobile)
+  navMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navMenu.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
     });
-
+  });
 });

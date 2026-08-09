@@ -1,59 +1,32 @@
 <header class="site-header">
+  <nav class="navbar" aria-label="Navigasi utama">
+    <div class="navbar__brand">
+      <a href="/" class="navbar__logo">Toko&nbsp;Ibu&nbsp;Aries</a>
+    </div>
 
-    <nav class="navbar" aria-label="Navigasi utama">
+    <button
+      class="navbar__toggle"
+      id="navToggle"
+      type="button"
+      aria-label="Buka menu navigasi"
+      aria-expanded="false"
+      aria-controls="navMenu"
+    >
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
 
-        <div class="container navbar-container">
-
-            <a href="/" class="navbar-brand">
-                Toko Sembako Ibu Aries
-            </a>
-
-            <button
-                type="button"
-                class="hamburger"
-                id="hamburger"
-                aria-label="Buka menu navigasi"
-                aria-expanded="false"
-                aria-controls="main-menu"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-menu" id="main-menu">
-
-                <li>
-                    <a
-                        href="/"
-                        class="<%= activePage === 'beranda' ? 'active' : '' %>"
-                    >
-                        Beranda
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="/produk"
-                        class="<%= activePage === 'produk' ? 'active' : '' %>"
-                    >
-                        Produk
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="/tanya-ai"
-                        class="<%= activePage === 'tanya-ai' ? 'active' : '' %>"
-                    >
-                        Tanya AI
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </nav>
-
+    <ul class="navbar__menu" id="navMenu">
+      <li>
+        <a href="/" class="<%= activePage === 'home' ? 'is-active' : '' %>">Beranda</a>
+      </li>
+      <li>
+        <a href="/produk" class="<%= activePage === 'produk' ? 'is-active' : '' %>">Produk</a>
+      </li>
+      <li>
+        <a href="/tanya-ai" class="<%= activePage === 'tanya-ai' ? 'is-active' : '' %>">Tanya AI</a>
+      </li>
+    </ul>
+  </nav>
 </header>

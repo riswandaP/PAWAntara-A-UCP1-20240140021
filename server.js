@@ -1,9 +1,9 @@
 // server.js
-// Fondasi server Express untuk Toko Sembako Ibu Aries.
+// Fondasi server Express untuk Toko Sembako Ibu Aries (Sprint 1).
 // - View engine: EJS
 // - Static assets: /public
 // - Routing halaman: routes/pages.js
-// - REST API read-only: routes/api.js
+// - Routing REST API (read-only): routes/api.js
 
 const path = require("path");
 const express = require("express");
@@ -12,70 +12,47 @@ const pageRoutes = require("./routes/pages");
 const apiRoutes = require("./routes/api");
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
-// ================================
-// VIEW ENGINE
-// ================================
-
+// Setup view engine EJS
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// ================================
-// STATIC ASSETS
-// ================================
-
+// Static files (CSS, JS, gambar)
 app.use(express.static(path.join(__dirname, "public")));
 
-// ================================
-// BODY PARSER
-// ================================
-
+// Parsing body (dibutuhkan nanti untuk form POST di sprint berikutnya)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ================================
-// ROUTING HALAMAN
-// ================================
+// Middleware custom: request logger (FR-08)
+// Mencatat setiap request yang masuk ke terminal: waktu, method, dan path.
+function requestLogger(req, res, next) {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.originalUrl}`);
+  next();
+}
 
+app.use(requestLogger);
+
+// Routing
 app.use("/", pageRoutes);
-
-// ================================
-// REST API
-// ================================
-
 app.use("/api", apiRoutes);
 
-// ================================
-// 404 HANDLER
-// ================================
-
+// 404 handler untuk route yang sama sekali tidak ada
 app.use((req, res) => {
-    res.status(404).render("404", {
-        title: "Halaman Tidak Ditemukan",
-        activePage: ""
-    });
+  res.status(404).render("404", {
+    title: "Halaman Tidak Ditemukan",
+    activePage: "",
+  });
 });
 
-// ================================
-// ERROR HANDLER
-// ================================
-
+// Error handler umum, supaya server tidak crash kalau ada error tak terduga
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-
-    res.status(500).send(
-        "Terjadi kesalahan pada server."
-    );
+  console.error(err.stack);
+  res.status(500).send("Terjadi kesalahan pada server.");
 });
-
-// ================================
-// START SERVER
-// ================================
 
 app.listen(PORT, () => {
-    console.log(
-        `Server berjalan di http://localhost:${PORT}`
-    );
+  console.log(`Server berjalan di http://localhost:${PORT}`);
 });
