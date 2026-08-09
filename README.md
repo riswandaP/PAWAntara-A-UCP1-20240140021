@@ -81,3 +81,16 @@ Server berjalan di: `http://localhost:3000`
 Styling memakai CSS custom (Flexbox untuk navbar & hero, CSS Grid
 untuk grid produk & info detail) dengan 2 breakpoint media query
 (900px & 640px) untuk desktop, tablet, dan mobile.
+
+## Screenshoot 
+<img width="1919" height="1079" alt="Screenshot 2026-08-09 205752" src="https://github.com/user-attachments/assets/083a6432-1f5a-4ef8-8e19-9762acb7a9b7" />
+
+<img width="1918" height="1076" alt="Screenshot 2026-08-09 205952" src="https://github.com/user-attachments/assets/a5f78140-dccb-48c1-9004-f3585cabe465" />
+
+<img width="1919" height="1078" alt="Screenshot 2026-08-09 210030" src="https://github.com/user-attachments/assets/4be81f21-7706-4494-943f-d7f7e5bbde14" />
+
+<img width="1919" height="1079" alt="Screenshot 2026-08-09 210101" src="https://github.com/user-attachments/assets/1f063f3f-456e-4cb4-a647-51996726ff2f" />
+
+<img width="1919" height="1079" alt="Screenshot 2026-08-09 210241" src="https://github.com/user-attachments/assets/d36228f7-fc58-44b3-9d36-6a153a5aca62" />
+
+<img width="1919" height="1079" alt="Screenshot 2026-08-09 210128" src="https://github.com/user-attachments/assets/ab4342ce-5c21-45d7-a367-fb1fb2a0e6c5" />
