@@ -71,4 +71,15 @@ router.get("/produk/:id", (req, res) => {
     });
 });
 
+// ================================
+// TANYA AI
+// ================================
+
+router.get("/tanya-ai", (req, res) => {
+    res.render("tanya-ai", {
+        title: "Tanya AI",
+        activePage: "tanya-ai"
+    });
+});
+
 module.exports = router;

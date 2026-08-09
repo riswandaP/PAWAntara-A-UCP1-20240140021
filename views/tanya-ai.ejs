@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %> | Toko Sembako Ibu Aries</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <section class="ai-page">
+            <div class="container">
+
+                <header class="section-header">
+                    <span class="section-label">
+                        Asisten Toko
+                    </span>
+
+                    <h1>
+                        Tanya AI
+                    </h1>
+
+                    <p>
+                        Tanyakan informasi seputar produk
+                        dan kebutuhan sembako Anda.
+                    </p>
+                </header>
+
+
+                <section class="chat-container">
+
+                    <header class="chat-header">
+                        <h2>
+                            Percakapan
+                        </h2>
+                    </header>
+
+
+                    <div
+                        class="chat-messages"
+                        aria-live="polite"
+                        aria-label="Riwayat percakapan"
+                    >
+
+                        <article class="chat-message assistant-message">
+                            <header>
+                                <strong>
+                                    Asisten
+                                </strong>
+                            </header>
+
+                            <p>
+                                Halo! Saya siap membantu Anda
+                                mencari informasi tentang produk
+                                sembako.
+                            </p>
+                        </article>
+
+                    </div>
+
+
+                    <form
+                        action="/tanya-ai"
+                        method="POST"
+                        class="chat-form"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="question">
+                                Pertanyaan Anda
+                            </label>
+
+                            <textarea
+                                id="question"
+                                name="question"
+                                rows="4"
+                                placeholder="Contoh: Berapa harga beras premium?"
+                                required
+                            ></textarea>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn"
+                        >
+                            Kirim Pertanyaan
+                        </button>
+
+                    </form>
+
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
