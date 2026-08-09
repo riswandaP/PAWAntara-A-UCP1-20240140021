@@ -1,22 +1,20 @@
 {
-  "name": "UCP 1",
+  "name": "toko-sembako-ibu-aries",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fondasi website Toko Sembako Ibu Aries - Sprint 1 (struktur halaman, styling responsif, server Express dasar)",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
+  "keywords": ["express", "ejs", "toko", "sembako"],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "ejs": "^6.0.1",
-    "express": "^5.2.1"
+    "express": "^4.19.2",
+    "ejs": "^3.1.10"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.4"
   }
 }
