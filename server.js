@@ -1,9 +1,3 @@
-// server.js
-// Fondasi server Express untuk Toko Sembako Ibu Aries.
-// - View engine: EJS
-// - Static assets: /public
-// - Routing halaman: routes/pages.js
-
 const path = require("path");
 const express = require("express");
 

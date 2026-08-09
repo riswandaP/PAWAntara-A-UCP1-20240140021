@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %> | Toko Sembako Ibu Aries</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <section class="product-not-found">
+            <div class="container">
+
+                <article class="not-found-card">
+
+                    <header>
+                        <span class="section-label">
+                            Produk
+                        </span>
+
+                        <h1>
+                            Produk Tidak Ditemukan
+                        </h1>
+                    </header>
+
+                    <p>
+                        Maaf, produk yang Anda cari
+                        tidak tersedia.
+                    </p>
+
+                    <a href="/produk" class="btn">
+                        Kembali ke Daftar Produk
+                    </a>
+
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
