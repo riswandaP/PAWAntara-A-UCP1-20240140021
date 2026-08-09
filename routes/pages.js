@@ -15,14 +15,34 @@ router.get("/", (req, res) => {
 });
 
 // ================================
-// HALAMAN PRODUK
+// HALAMAN PRODUK + FILTER
 // ================================
 
 router.get("/produk", (req, res) => {
+    const { kategori, search } = req.query;
+
+    let filteredProducts = products;
+
+    // Filter berdasarkan kategori
+    if (kategori) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.category.toLowerCase() === kategori.toLowerCase()
+        );
+    }
+
+    // Filter berdasarkan pencarian nama produk
+    if (search) {
+        filteredProducts = filteredProducts.filter(product =>
+            product.name.toLowerCase().includes(search.toLowerCase())
+        );
+    }
+
     res.render("produk", {
         title: "Produk",
         activePage: "produk",
-        products: products
+        products: filteredProducts,
+        kategori: kategori || "",
+        search: search || ""
     });
 });
 
