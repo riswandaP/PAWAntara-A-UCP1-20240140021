@@ -1,29 +1,59 @@
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <a href="/" class="logo">Toko Sembako Ibu Aries</a>
+<header class="site-header">
+
+    <nav class="navbar" aria-label="Navigasi utama">
+
+        <div class="container navbar-container">
+
+            <a href="/" class="navbar-brand">
+                Toko Sembako Ibu Aries
+            </a>
 
             <button
                 type="button"
-                class="menu-toggle"
-                id="menu-toggle"
+                class="hamburger"
+                id="hamburger"
                 aria-label="Buka menu navigasi"
                 aria-expanded="false"
+                aria-controls="main-menu"
             >
-                ☰
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
-            <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu" id="main-menu">
+
                 <li>
-                    <a href="/">Beranda</a>
+                    <a
+                        href="/"
+                        class="<%= activePage === 'beranda' ? 'active' : '' %>"
+                    >
+                        Beranda
+                    </a>
                 </li>
+
                 <li>
-                    <a href="/produk">Produk</a>
+                    <a
+                        href="/produk"
+                        class="<%= activePage === 'produk' ? 'active' : '' %>"
+                    >
+                        Produk
+                    </a>
                 </li>
+
                 <li>
-                    <a href="/tanya-ai">Tanya AI</a>
+                    <a
+                        href="/tanya-ai"
+                        class="<%= activePage === 'tanya-ai' ? 'active' : '' %>"
+                    >
+                        Tanya AI
+                    </a>
                 </li>
+
             </ul>
+
         </div>
+
     </nav>
+
 </header>
