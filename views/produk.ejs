@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %> | Toko Sembako Ibu Aries</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <section class="product-page">
+            <div class="container">
+
+                <header class="section-header">
+                    <span class="section-label">Katalog</span>
+
+                    <h1>Daftar Produk</h1>
+
+                    <p>
+                        Temukan berbagai kebutuhan sembako
+                        yang tersedia di Toko Sembako Ibu Aries.
+                    </p>
+                </header>
+
+                <section class="product-grid">
+
+                    <% products.forEach(product => { %>
+
+                        <article class="product-card">
+
+                            <header>
+                                <h2>
+                                    <%= product.name %>
+                                </h2>
+                            </header>
+
+                            <p>
+                                Kategori:
+                                <strong><%= product.category %></strong>
+                            </p>
+
+                            <p>
+                                Harga:
+                                <strong>
+                                    Rp <%= product.price.toLocaleString("id-ID") %>
+                                </strong>
+                            </p>
+
+                            <p>
+                                Stok:
+                                <strong><%= product.stock %></strong>
+                            </p>
+
+                            <a
+                                href="/produk/<%= product.id %>"
+                                class="btn"
+                            >
+                                Lihat Detail
+                            </a>
+
+                        </article>
+
+                    <% }) %>
+
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
